@@ -19,31 +19,39 @@ tmp=data{subj,trial};
 % See Figure 4 of the paper for a more clear representation of the markers
 % position
 
-mkr1=[3,4,5]; % Marker 1 - index metacarpophalangeal joint
-mkr2=[7,8,9]; % Marker 2 - little finger metacarpophalangeal joint
-mkr3=[11,12,13]; % Marker 3 - diaphysis of the third metacarpal
-mkr4=[15,16,17]; % Marker 4 - on the smartwatch dial in correspondance of the radial styloid
-mkr5=[19,20,21]; % Marker 5 - on the smartwatch dial in correspondance of the ulnar styloid
-mkr6=[23,24,25]; % Marker 6 - right watch strap
-mkr15=[59,60,61]; % Marker 15 - left watch strap
+% mkr1=[3,4,5]; % Marker 1 - index metacarpophalangeal joint
+% mkr2=[7,8,9]; % Marker 2 - little finger metacarpophalangeal joint
+% mkr3=[11,12,13]; % Marker 3 - diaphysis of the third metacarpal
+% mkr4=[15,16,17]; % Marker 4 - on the smartwatch dial in correspondance of the radial styloid
+% mkr5=[19,20,21]; % Marker 5 - on the smartwatch dial in correspondance of the ulnar styloid
+% mkr6=[23,24,25]; % Marker 6 - right watch strap
+% mkr15=[59,60,61]; % Marker 15 - left watch strap
+
+% Marker 1 - index metacarpophalangeal joint
+% Marker 2 - little finger metacarpophalangeal joint
+% Marker 3 - diaphysis of the third metacarpal
+% Marker 4 - on the smartwatch dial in correspondance of the radial styloid
+% Marker 5 - on the smartwatch dial in correspondance of the ulnar styloid
+% Marker 6 - right watch strap
+% Marker 15 - left watch strap
 
 figure; hold on
-plot3(tmp(:,mkr1(1)),-tmp(:,mkr1(2)),-tmp(:,mkr1(3)),'r','LineWidth',2); 
-scatter3(tmp(1,mkr1(1)),-tmp(1,mkr1(2)),-tmp(1,mkr1(3)),'*r','HandleVisibility','off','LineWidth',2); %1
-plot3(tmp(:,mkr2(1)),-tmp(:,mkr2(2)),-tmp(:,mkr2(3)),'b','LineWidth',2); 
-scatter3(tmp(1,mkr2(1)),-tmp(1,mkr2(2)),-tmp(1,mkr2(3)),'*b','HandleVisibility','off','LineWidth',2); %2
-plot3(tmp(:,mkr3(1)),-tmp(:,mkr3(2)),-tmp(:,mkr3(3)),'k','LineWidth',2); 
-scatter3(tmp(1,mkr3(1)),-tmp(1,mkr3(2)),-tmp(1,mkr3(3)),'*k','HandleVisibility','off','LineWidth',2); %3
-plot3(tmp(:,mkr4(1)),-tmp(:,mkr4(2)),-tmp(:,mkr4(3)),'g','LineWidth',2); 
-scatter3(tmp(1,mkr4(1)),-tmp(1,mkr4(2)),-tmp(1,mkr4(3)),'*g','HandleVisibility','off','LineWidth',2); %4
-plot3(tmp(:,mkr5(1)),-tmp(:,mkr5(2)),-tmp(:,mkr5(3)),'c','LineWidth',2); 
-scatter3(tmp(1,mkr5(1)),-tmp(1,mkr5(2)),-tmp(1,mkr5(3)),'*c','HandleVisibility','off','LineWidth',2); %5
-plot3(tmp(:,mkr6(1)),-tmp(:,mkr6(2)),-tmp(:,mkr6(3)),'m','LineWidth',2); 
-scatter3(tmp(1,mkr6(1)),-tmp(1,mkr6(2)),-tmp(1,mkr6(3)),'*m','HandleVisibility','off','LineWidth',2); %6
-plot3(tmp(:,mkr15(1)),-tmp(:,mkr15(2)),-tmp(:,mkr15(3)),'y','LineWidth',2); 
-scatter3(tmp(1,mkr15(1)),-tmp(1,mkr15(2)),-tmp(1,mkr15(3)),'*y','HandleVisibility','off','LineWidth',2); %15
+plot3(tmp.mkr1_x,-tmp.mkr1_y,-tmp.mkr1_z,'r','LineWidth',2); 
+scatter3(tmp.mkr1_x(1),-tmp.mkr1_y(1),-tmp.mkr1_z(1),'*r','HandleVisibility','off','LineWidth',1); %1
+plot3(tmp.mkr2_x,-tmp.mkr2_y,-tmp.mkr2_z,'b','LineWidth',2); 
+scatter3(tmp.mkr2_x(1),-tmp.mkr2_y(1),-tmp.mkr2_z(1),'*b','HandleVisibility','off','LineWidth',2); %2
+plot3(tmp.mkr3_x,-tmp.mkr3_y,-tmp.mkr3_z,'k','LineWidth',2); 
+scatter3(tmp.mkr3_x(1),-tmp.mkr3_y(1),-tmp.mkr3_z(1),'*k','HandleVisibility','off','LineWidth',2); %3
+plot3(tmp.mkr4_x,-tmp.mkr4_y,-tmp.mkr4_z,'g','LineWidth',2); 
+scatter3(tmp.mkr4_x(1),-tmp.mkr4_y(1),-tmp.mkr4_z(1),'*g','HandleVisibility','off','LineWidth',2); %4
+plot3(tmp.mkr5_x,-tmp.mkr5_y,-tmp.mkr5_z,'c','LineWidth',2); 
+scatter3(tmp.mkr5_x(1),-tmp.mkr5_y(1),-tmp.mkr5_z(1),'*c','HandleVisibility','off','LineWidth',2); %5
+plot3(tmp.mkr6_x,-tmp.mkr6_y,-tmp.mkr6_z,'m','LineWidth',2); 
+scatter3(tmp.mkr6_x(1),-tmp.mkr6_y(1),-tmp.mkr6_z(1),'*m','HandleVisibility','off','LineWidth',2); %6
+plot3(tmp.mkr15_x,-tmp.mkr15_y,-tmp.mkr15_z,'y','LineWidth',2); 
+scatter3(tmp.mkr15_x(1),-tmp.mkr15_y(1),-tmp.mkr15_z(1),'*y','HandleVisibility','off','LineWidth',2); %15
 legend("mkr1","mkr2","mkr3","mkr4","mkr5","mkr6","mkr15")
-title(strcat("3D Trajectory Subject ", num2str(subj), " Trial ", num2str(trial)));
+title(strcat("3D Hand Trajectory - Subject ", num2str(subj), " Trial ", num2str(trial)));
 xlabel("x");
 ylabel("z");
 zlabel("y");
