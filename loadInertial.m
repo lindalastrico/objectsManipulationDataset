@@ -11,7 +11,7 @@ function [data] = loadInertial(folder)
 %
 % Example of use:
 % folder = '../inertial/';
-% mocap_data = loadInertial(folder);
+% inertial_data = loadInertial(folder);
 
 
 
