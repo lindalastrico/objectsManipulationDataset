@@ -14,6 +14,10 @@ function [] = animatedPlot(folder, videoName, data, timeCamera, pov)
 %                   high resolution camera)
 %              Output:
 %                   [] 
+% NB: Look for %change to modify the function behaviour. It is possible to
+% represent more markers (even though the animation becomes slower). It is
+% also possible to mantain the markers drawn in the previous frames, 
+% so that the full trajectory of the markers remains drawn as the video progresses
 %
 % Previous steps required: Create a video from the images recorded with the
 % back camera (cam_2) of Participant 13 performing Trial 62
@@ -114,6 +118,7 @@ while(hasFrame(vid))
     scatter3(h1_x(i), h1_y(i), h1_z(i), 'o', 'filled','markerFaceColor',colors(1,:),'markerEdgeColor',colors(1,:));
     scatter3(h2_x(i), h2_y(i), h2_z(i), 'o', 'filled','markerFaceColor',colors(2,:),'markerEdgeColor',colors(2,:));
     scatter3(h3_x(i), h3_y(i), h3_z(i), 'o', 'filled','markerFaceColor',colors(3,:),'markerEdgeColor',colors(3,:));
+    %change
 %     % commented to not slow down the animated plot
     %     scatter3(h4_x(i), h4_y(i), h4_z(i), 'o', 'filled','markerFaceColor',colors(4,:),'markerEdgeColor',colors(4,:));   
     %     scatter3(h5_x(i), h5_y(i), h5_z(i), 'o', 'filled','markerFaceColor',colors(5,:),'markerEdgeColor',colors(5,:));
