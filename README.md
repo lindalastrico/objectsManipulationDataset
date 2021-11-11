@@ -9,6 +9,6 @@ A schematic annotation file is provided, where is specified the sequence of gest
 
 - The functions "loadMocap" and "loadInertial" allow the user to load and save the data of the respective sensor in an easy-to-use data structure organized in as many rows as the subjects number (15) and as many columns as the trials acquired (80). 
 - The function "createVideo" allows to create a video clip from the images acquired for a specific participant and trial, the output is saved in the specified folder. 
-- "animatedPlot" renders a previously created wideo together with the markers on the hand. The 3D trajectories and the video are reproduced simultaneously
+- "animatedPlot" renders a previously created wideo together with the markers on the hand and the acceleration components of the wrist. The 3D trajectories, the inertial data and the video are reproduced simultaneously
 - The function "loadTimestampsCameras" saves in a data structure the YARP timestamp of each one of the 3 cameras during the experiment. 
 - "visualizeHandTrajectory" returns a 3d plot of the hand markers trajectory for a specific trial and participant.
